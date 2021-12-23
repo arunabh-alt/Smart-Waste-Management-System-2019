@@ -1,0 +1,133 @@
+#include<ESP8266WiFi.h>   //LIbrary
+
+const char* ssid = "JioFi4_158B72";       //WiFi ID and Password
+const char* password = "6t9h1pnz4o";
+const int TRIGPIN = 14; // D5
+const int ECHOPIN = 12; // D6
+int distance;
+
+
+
+WiFiServer server(80);    //port for communication between webbrowser and webserver
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+        //mention led pinmode and keep led as low
+  pinMode(ECHOPIN, INPUT); //receiver
+  pinMode(TRIGPIN, OUTPUT); //sender
+  
+  Serial.print("Connecting to the Network");
+  WiFi.begin(ssid, password);       //WiFi is ready to connect with id and password
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(500);
+    Serial.print(".");        //until WiFi connects ,it shows (............)
+  }
+  Serial.println("WiFi Connected");
+  server.begin();
+  Serial.println("Server started");       //Once wifi id and password matched ,then server starts
+  Serial.print("IP Address of the network:");
+  Serial.println(WiFi.localIP());
+  Serial.print("Copy and paste the following URL: https://");
+  Serial.print(WiFi.localIP());   //we get local ip adress with this coding
+  Serial.println("              /");
+}
+
+void loop() 
+{
+  // put your main code here, to run repeatedly:
+  WiFiClient client = server.available();
+  if (!client)      //if client not available it will return to previous code
+  {
+    return;
+  }
+  Serial.println("Waiting for new client");
+  while (!client.available())   //wait until client sends some data
+  {
+    delay(1);
+  }
+  //if there is a new client and for reading client message we need to accept client request for that we have one string that is readstring
+  String request = client.readStringUntil('\r');  //that message will store as a r(request)
+  Serial.println(request);
+  client.flush();   //after acceptance of request it will flush     //browser or client geting flushed 
+  client.println(); //next line
+  digitalWrite(TRIGPIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIGPIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIGPIN, LOW);
+  float duration = pulseIn(ECHOPIN, HIGH);
+  Serial.println("duration= ");
+  Serial.print(duration);
+  distance = duration*0.034/2;
+  Serial.println("distance= ");
+  Serial.print(distance);
+  Serial.println("cm");
+  delay(2000);
+
+  String s;
+  if(distance==0)
+  {
+    s="BIN IS EMPTY";
+  }
+  else
+  {
+    s="BIN IS FULL";
+  }
+
+
+//webpage part
+
+  client.println("HTTP/1.1 200 OK");
+  delay(1);
+  
+  Serial.println("client disconnected");
+  Serial.println(" ");
+  //HTML part
+  client.println("Content-type: text/html");
+  client.println("");
+  client.println("<!DOCTYPE HTML>");
+  client.println("<html>");
+ // client.println(" <meta http-equiv = refresh content= 0.5 />");
+  client.println("<head>");
+
+  client.println("<title>");
+  client.println("UTKRANTI 2.0");
+  client.println("</title>");
+  
+  client.println("</head>");
+  client.println("<body bgcolor=WHITE>");
+  client.println("<table bgcolor='BLUE' align='center' border='2' cellpadding = '4' cellspacing = '4'>");
+  //ROOM
+  client.println("<tr>");
+  client.print("<td>DISTANCE MEASUREMENT</td>");
+  client.print("<td>IN CM</td>");
+  client.print("<td>DURATION MEASUREMENT</td>");
+  client.print("<td>IN MS</td>");
+  client.println("</tr>");
+  //Table 2
+  client.println("<tr>");
+  client.print("<td><p>");
+  client.print("DISTANCE");
+  client.println("</p></td>");
+  client.print("<td><p>");
+  client.print(distance);
+  client.println("</p></td>");
+  client.print("<td><p>");
+  client.print("DURATION");
+  client.println("</p></td>");
+  client.print("<td><p>");
+  client.print(duration);
+  client.println("</p></td>");
+  client.println("</tr>");
+
+  client.println("<tr>");
+  client.println("<td>");
+  client.println(s);
+  client.println("</td>");
+  client.println("</tr>");
+  client.println("</table>");
+  client.println("</body>");
+  client.println("</html>");
+}

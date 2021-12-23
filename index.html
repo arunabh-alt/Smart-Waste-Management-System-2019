@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart Waste Management System</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<style>
+		#map {
+			height: 500px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body bgcolor="blue">
+	<div class="container-fluid">
+ 		<div class="p-3 mb-2 bg-success text-white">
+ 			<center>
+ 				<font color="white" size="7">Smart Waste Management System</font><br>
+ 				<font color="Yellow" size="4">by Tech Connect</font>
+ 			</center>
+ 		</div>	
+	</div>
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center px-4">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dustbins</a>
+						    <div class="dropdown-menu">
+						      <a class="dropdown-item" href="file:///C:/Users/manis/OneDrive/Desktop/Utkranti%202.0/Web%20UI/TechConnect/dustbin1.html" target="_bottom">Dustbin 1</a>
+						      <a class="dropdown-item" href="file:///C:/Users/manis/OneDrive/Desktop/Utkranti%202.0/Web%20UI/TechConnect/dustbin2.html" target="_bottom">Dustbin 2</a>
+						      <a class="dropdown-item" href="file:///C:/Users/manis/OneDrive/Desktop/Utkranti%202.0/Web%20UI/TechConnect/dustbin3.html" target="_bottom">Dustbin 3</a>
+						      <a class="dropdown-item" href="#">Dustbin 4</a>
+						    </div>
+				</li>
+
+
+	        	<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cities</a>
+						    <div class="dropdown-menu">
+						      <a class="dropdown-item" href="#">Guwahati</a>
+						      <a class="dropdown-item" href="#">Jorhat</a>
+						      <a class="dropdown-item" href="#">Tezpur</a>
+						      <a class="dropdown-item" href="#">Dibrugarh</a>
+						    </div>
+				</li>
+
+
+	        	<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dustbin Data</a>
+						    <div class="dropdown-menu">
+						      <a class="dropdown-item" href="https://thingspeak.com/channels/863958/private_show" target="_blank">Dustbin 1 Data</a>
+						      <a class="dropdown-item" href="#">Dustbin 2 Data</a>
+						      <a class="dropdown-item" href="#">Dustbin 3 Data</a>
+						      <a class="dropdown-item" href="#">Dustbin 4 Data</a>
+						    </div>
+				</li>
+
+
+	        	<li class="nav-item"><a href="#" class="nav-link">Locate</a></li>
+
+	          <li class="nav-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdBB--7iA8puEZPQOITYGimV0u7iQtx_SeTuHc-6PksJ8-oqA/viewform?usp=sf_link" class="nav-link">Contact Us</a></li>
+	          <li class="nav-item"><a href="file:///C:/Users/manis/OneDrive/Desktop/Utkranti%202.0/Web%20UI/TechConnect/Ut%20Web/About%20Us.html" class="nav-link">About Us</a></li>
+
+	          	<li class="nav-item"><a href="file:///C:/Users/manis/OneDrive/Desktop/Utkranti%202.0/Web%20UI/TechConnect/capture/capture/index.html" class="nav-link">Project Model</a></li>
+
+	          	<li class="nav-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdL8jxqjDdQKbNhUK0DeTjZ-IdXcHVo5fZrPGMWNQabi9oTrg/viewform?usp=sf_link" class="nav-link">Feedbacks/Suggestions</a></li>
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+
+	<div id="map"></div>
+  <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(
+            document.getElementById('map'),
+            {center: new google.maps.LatLng(26.154717,91.662827), zoom: 11});
+
+       
+        var value1=10; 
+        var value2=10 ; 
+        var value3=0 ;
+        // GET ("https://api.thingspeak.com/update?api_key=K5XUQB84Q1SLIHQI&field1=0 ");
+        var v_icon1='';
+        var v_icon2='';
+        var v_icon3='';
+
+        if(value1>5)
+        {
+          v_icon1='https://findicons.com/files/icons/1523/kidcons/32/empty_trash.png';
+        }
+       if(value2>5)
+        {
+          v_icon2='https://findicons.com/files/icons/1523/kidcons/32/empty_trash.png';
+        }
+       if(value3>5)
+        {
+          v_icon3='https://findicons.com/files/icons/1523/kidcons/32/empty_trash.png';
+        }
+      if(value1<=5)
+        {
+          v_icon1='https://findicons.com/files/icons/1504/kidcon_alpine_os/32/trash_empty.png';
+        }
+      if(value2<=5)
+        {
+          v_icon2='https://findicons.com/files/icons/1504/kidcon_alpine_os/32/trash_empty.png';
+        }
+       if(value3<=5)
+        {
+          v_icon3='https://findicons.com/files/icons/1504/kidcon_alpine_os/32/trash_empty.png';
+        }
+        var D1={position:new google.maps.LatLng(26.1847328,91.7526356)}
+        var D2 ={ position: new google.maps.LatLng(26.1010409,91.5967542)}
+        var D3={position: new google.maps.LatLng(26.152152, 91.662562)}
+
+
+
+        var infowindow = new google.maps.InfoWindow({
+        content:"Hello World!"});
+        infowindow.open(map,marker);
+
+        infowindow.open(map,marker); 
+        var marker= new google.maps.Marker({
+            position: D1.position,
+            title:'D1',
+            icon:v_icon1,
+            map: map
+          });
+          var marker1 = new google.maps.Marker({
+            position: D2.position,
+            title:'D2',
+            icon:v_icon2,
+            map: map
+          });
+          var marker2 = new google.maps.Marker({
+            position: D3.position,
+            title:'D3',
+            animation: google.maps.Animation.BOUNCE,
+            icon:v_icon3,
+            map: map
+          });
+
+
+       marker.addListener('click', function() {
+         map.setZoom(14);
+         map.setCenter(marker.getPosition());
+       });
+       marker1.addListener('click', function() {
+         map.setZoom(14);
+         map.setCenter(marker1.getPosition());
+       });
+       marker2.addListener('click', function() {
+         map.setZoom(14);
+         map.setCenter(marker2.getPosition());
+       });
+     
+     
+      }
+
+      
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRLwj0Hc9DqUZIxk59ppnFYY_w3T6rdw&callback=initMap">
+    </script>
+
+
+
+
+
+
+    <!--footer part-->
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Gauhati University</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 123456780</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">www.TechConnect.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Todays Quotes</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Recycle,Reuse,Ruduce</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> September 15, 2019</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-5 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Keep your city clean and Green</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> September 15, 2019</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                <li><a href="file:///C:/Users/manis/OneDrive/Desktop/Utkranti%202.0/Web%20UI/TechConnect/Ut%20Web/utkranti%20webpage.html"><span class="ion-ios-arrow-round-forward mr-2" target="_blank"></span>About</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+                <li><a href="file:///C:/Users/manis/OneDrive/Desktop/Utkranti%202.0/Web%20UI/TechConnect/Ut%20Web/About%20Us.html#"><span class="ion-ios-arrow-round-forward mr-2" target="_blank"></span>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">Subscribe Us!</h2>
+              <form action="#" class="subscribe-form">
+                <div class="form-group">
+                  <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
+                  <input type="submit" value="Subscribe" class="form-control submit px-3">
+                </div>
+              </form>
+            </div>
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate fadeInUp ftco-animated"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate fadeInUp ftco-animated"><a href="https://www.linkedin.com/in/manishshah120/"><span class="icon-linkdin"></span></a></li>
+                <li class="ftco-animate fadeInUp ftco-animated"><a href="https://www.facebook.com/manish.shah.5623293"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate fadeInUp ftco-animated"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><script>document.write(new Date().getFullYear());</script> All rights reserved<i class="icon-heart" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>
